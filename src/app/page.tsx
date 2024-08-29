@@ -1,13 +1,9 @@
-//example
+import React from 'react'
 
-// import { useEffect, useState } from "react";
-// import { useRouter } from "next/router";
-  
-//   return (
-//     <main>
-//       <pre>
-//         {JSON.stringify(thread, null, 2)}
-//       </pre>
-//     </main>
-//   );
-// }
+const Home = () => {
+  return (
+    <div>Home</div>
+  )
+}
+
+export default Home
