@@ -9,9 +9,9 @@ type Thread = {
   id: number;
 	title: string;
 	category: ThreadCategory;
-	creationDate?: string;
+	creationDate: string;
 	description: string;
-	creator: User;
+	creator?: User;
 }
 
 type QNAThread =  Thread & { //Type extension
@@ -27,7 +27,10 @@ type ThreadComment = {
 	creator: User
 }
 
-
+type SubmitForm = {
+	title:string,
+	description:string
+}
 
 
 
