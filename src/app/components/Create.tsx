@@ -11,7 +11,7 @@ import {
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
-import { SubmitForm, Thread, ThreadCategory } from '@/types/post'
+import { validate } from './validate'
 
 export const Create = () => {
   const [form, setForm] = useState<SubmitForm>({
@@ -19,6 +19,11 @@ export const Create = () => {
     description: ''
   })
 
+  const [error, setError] = useState<ErrorForm>({
+    title:'',
+    description:'',
+    selection:''
+  })
   const [selection, setSelection] = useState<ThreadCategory | string>('')
   const router = useRouter()
 
@@ -36,6 +41,10 @@ export const Create = () => {
 
   function onSubmit(e:React.FormEvent<HTMLFormElement>){
     e.preventDefault()
+
+    if(!validate(form,selection,setError)){
+      return
+    }
     try {
       const newSubject:Thread = {
           id:crypto.randomUUID(),
@@ -79,6 +88,9 @@ export const Create = () => {
           <Textarea value={form.description} name='description' onChange={onChangeHandler} className='resize-none' />
         </div>
         <Button className='container'>Submit</Button>
+          {error.title && <p className='text-red-700 my-2'>{error.title}</p>}
+        {error.selection && <p className='text-red-700 my-2'>{error.selection}</p>}
+          {error.description && <p className='text-red-700'>{error.description}</p>}
       </form>
     </div>
   )
