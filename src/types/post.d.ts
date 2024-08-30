@@ -31,3 +31,7 @@ type SubmitForm = {
 	title:string,
 	description:string
 }
+
+type ErrorForm = SubmitForm & {
+	selection:string
+}
