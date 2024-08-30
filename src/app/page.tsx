@@ -1,13 +1,22 @@
-//example
+'use client'
+import React, { useEffect } from 'react'
 
-// import { useEffect, useState } from "react";
-// import { useRouter } from "next/router";
+const Home = () => {
+
+  useEffect(() => {
   
-//   return (
-//     <main>
-//       <pre>
-//         {JSON.stringify(thread, null, 2)}
-//       </pre>
-//     </main>
-//   );
-// }
+    function getData(){
+      const myData = localStorage.getItem('myDataStorage')
+      console.log(myData)
+      
+    }
+    getData()
+  }, [])
+  
+
+  return (
+    <div>Home</div>
+  )
+}
+
+export default Home
