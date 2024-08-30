@@ -11,6 +11,7 @@ import {
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
+import { SubmitForm, Thread, ThreadCategory } from '@/types/post'
 
 export const Create = () => {
   const [form, setForm] = useState<SubmitForm>({
@@ -41,7 +42,7 @@ export const Create = () => {
           category:selection as ThreadCategory,
           title:form.title,
           description: form.description,
-          creationDate:new Date,
+          creationDate:new Date(new Date().toISOString()),
       }
 
       const newSubjectString = JSON.stringify(newSubject)
