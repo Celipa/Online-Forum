@@ -6,10 +6,10 @@ type User = {
 }
 
 type Thread = {
-  id: number;
+  id: string;
 	title: string;
 	category: ThreadCategory;
-	creationDate: string;
+	creationDate: Date;
 	description: string;
 	creator?: User;
 }
