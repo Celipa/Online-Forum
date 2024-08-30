@@ -1,9 +1,15 @@
-import React from 'react'
+'use client'
+import React from 'react';
+import LandingPage from './components/Page';
 
-const Home = () => {
+const App: React.FC = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <main>
+      <div className='header'>
+      <LandingPage />
+      </div>
+    </main>
+  );
+};
 
-export default Home
+export default App;

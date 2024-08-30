@@ -1,33 +1,37 @@
-type ThreadCategory = "THREAD" | "QNA";
+export type ThreadCategory = "THREAD" | "QNA";
 
-type User = {
+export type User = {
 	userName: string;
   userId: number;
 }
 
-type Thread = {
-  id: number;
-	title: string;
+export interface Thread {
+	id: string;
 	category: ThreadCategory;
-	creationDate: string;
+	title: string;
 	description: string;
+	creationDate: Date;
 	creator?: User;
 }
 
-type QNAThread =  Thread & { //Type extension
+export type QNAThread =  Thread & { //Type extension
 	category: "QNA";
 	isAnswered: boolean;
 	commentAnswerId?: number;
 }
 
-type ThreadComment = {
+export type ThreadComment = {
 	id: User;
 	thread: Thread;
 	content: string;
 	creator: User
 }
 
-type SubmitForm = {
+export type SubmitForm = {
 	title:string,
 	description:string
+}
+
+export type ErrorForm = SubmitForm & {
+	selection:string
 }
