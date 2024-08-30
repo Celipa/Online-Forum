@@ -51,7 +51,7 @@ export const Create = () => {
           category:selection as ThreadCategory,
           title:form.title,
           description: form.description,
-          creationDate:new Date,
+          creationDate:new Date(new Date().toISOString()),
       }
 
       const newSubjectString = JSON.stringify(newSubject)

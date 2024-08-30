@@ -1,22 +1,15 @@
 'use client'
-import React, { useEffect } from 'react'
+import React from 'react';
+import LandingPage from './components/Page';
 
-const Home = () => {
-
-  useEffect(() => {
-  
-    function getData(){
-      const myData = localStorage.getItem('myDataStorage')
-      console.log(myData)
-      
-    }
-    getData()
-  }, [])
-  
-
+const App: React.FC = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <main>
+      <div className='header'>
+      <LandingPage />
+      </div>
+    </main>
+  );
+};
 
-export default Home
+export default App;
