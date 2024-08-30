@@ -32,6 +32,6 @@ export type SubmitForm = {
 	description:string
 }
 
-type ErrorForm = SubmitForm & {
+export type ErrorForm = SubmitForm & {
 	selection:string
 }
