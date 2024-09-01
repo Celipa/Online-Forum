@@ -1,18 +1,46 @@
+"use client"
 import React from 'react'
+import { useEffect, useState } from 'react'
+
+type Data = {
+    id: string;
+    category: string;
+    title: string;
+    description: string;
+    creationDate: string;
+  };
 
 function Thread() {
+
+    const [data, setData] = useState<Data>({
+        id: '',
+        category: '',
+        title: '',
+        description: '',
+        creationDate: ''
+    })
+
+    useEffect(() => {
+        const key = "fa21ea81-cbbf-467b-a55d-81d9754883f3"
+        const localData = localStorage.getItem(key)
+        const parsedData = localData ? JSON.parse(localData) : null
+
+        setData(parsedData)
+    }, [])
+
+    console.log(data)
+
+
   return (
     <div className='d-thread'>
         <div className="d-thread-container">
             <div className="d-thread-container-top">
                 <span className='d-thread-poster'>Peter</span>
-                <h2 className='d-thread-title'>My cat ate my homework</h2>
+                <h2 className='d-thread-title'>{data.title}</h2>
             </div>
             <div className="d-thread-container-center">
                 <p className='d-thread-text'>
-                    Please help! My cat ate my homework and I don't know what to do. The cat is fat, orange, and doesn't listen to commands.
-                     There is no reasoning with the beast. He must be slain swiftly! Only when he is dead and vanquished shall I finally have peace 
-                     in my life. My homework will finally stay unbothered and my parents may finally begin to love me.
+                    {data.description}
                 </p>
             </div>
             <div className="d-thread-container-bottom">

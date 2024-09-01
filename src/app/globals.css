@@ -55,6 +55,10 @@
   }
 }
 
+body {
+  margin: 0;
+}
+
 .d-thread {
   background-color: rgb(81, 81, 131);
   height: 100vh;
@@ -88,18 +92,21 @@
 .d-thread-title {
   font-size: 1.3rem;
   font-weight: bold;
-  text-align: center;
+  margin: 0;
+  margin-top: 1rem;
 }
 
+.d-thread-container-top {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
 .d-thread-container-center {
   border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   padding-bottom: 2.5rem;
-  width: 70%;
-  align-self: center;
 }
 .d-thread-text{
-  text-align: center;
   width: 100%;
 }
 
@@ -107,10 +114,6 @@
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-self: center;
-  /* align-content: center; */
-  width: 70%;
 }
 
 .d-thread-container-bottom-comment {
