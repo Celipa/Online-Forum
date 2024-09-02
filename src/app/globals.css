@@ -245,7 +245,6 @@ body {
   padding: 1.5rem;
   justify-items: center;
   align-items: flex-start;
-  overflow:scroll;
 
 }
 .ellipsis {
