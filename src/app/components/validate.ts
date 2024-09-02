@@ -1,4 +1,3 @@
-import {SubmitForm,ErrorForm,ThreadCategory} from '@/types/post'
 
 
 export function validate(form:SubmitForm,selection:ThreadCategory | string,setError:React.Dispatch<React.SetStateAction<ErrorForm>>):boolean{

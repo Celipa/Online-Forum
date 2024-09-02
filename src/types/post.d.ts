@@ -1,11 +1,11 @@
-export type ThreadCategory = "THREAD" | "QNA";
+type ThreadCategory = "THREAD" | "QNA";
 
-export type User = {
+type User = {
 	userName: string;
   userId: number;
 }
 
-export interface Thread {
+interface Thread {
 	id: string;
 	category: ThreadCategory;
 	title: string;
@@ -15,24 +15,24 @@ export interface Thread {
 	comments?: ThreadComment[];
 }
 
-export type QNAThread =  Thread & { //Type extension
+type QNAThread =  Thread & { //Type extension
 	category: "QNA";
 	isAnswered: boolean;
 	commentAnswerId?: number;
 }
 
-export type ThreadComment = {
-	id?: User;
+type ThreadComment = {
+	id: User;
 	thread: Thread;
 	content: string;
 	creator: "GUEST";
 }
 
-export type SubmitForm = {
+type SubmitForm = {
 	title:string,
 	description:string
 }
 
-export type ErrorForm = SubmitForm & {
+type ErrorForm = SubmitForm & {
 	selection:string
 }
