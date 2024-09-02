@@ -109,7 +109,10 @@ function Thread() {
     <div className='d-thread'>
         <div className="d-thread-container">
             <div className="d-thread-container-top">
+              <div className="d-thread-container-top-width">
                 <span className='d-thread-poster'>Peter</span>
+                <span className='d-thread-category'>{data.category}</span>
+              </div>
                 <h2 className='d-thread-title'>{data.title}</h2>
             </div>
             <div className="d-thread-container-center">
