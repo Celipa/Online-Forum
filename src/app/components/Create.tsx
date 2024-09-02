@@ -42,6 +42,7 @@ export const Create = () => {
   function onSubmit(e:React.FormEvent<HTMLFormElement>){
     e.preventDefault()
 
+   
     if(!validate(form,selection,setError)){
       return
     }
@@ -55,20 +56,18 @@ export const Create = () => {
       }
 
        const oldStorage = localStorage.getItem('forum/threads')
-        let allThreads = []
-
+        let allThreads:Thread[]  = []
         if(oldStorage !==  null){
-         allThreads = JSON.parse(oldStorage)
+          allThreads = JSON.parse(oldStorage)
         }
 
         allThreads.push(newSubject)
 
-  
          localStorage.setItem("forum/threads", JSON.stringify(allThreads))
       
         router.push('/')
     } catch (error) {
-      
+      console.log(error)
     }
     
 
@@ -89,11 +88,11 @@ export const Create = () => {
       </div>
   
       <label className='form-label'>Thread/QNA</label>
-      <select onChange={e => setSelection(e.target.value)} className='form-select'>
-        <option value="" disabled selected>select</option>
-        <option value="THREAD">THREAD</option>
-        <option value="QNA">QNA</option>
-      </select>
+      <select value={selection} onChange={e => setSelection(e.target.value)} className='form-select'>
+  <option value="" disabled>Select</option>
+  <option value="THREAD">THREAD</option>
+  <option value="QNA">QNA</option>
+</select>
   
       <div className='my-5'>
         <label className='form-label'>Description</label>
