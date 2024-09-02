@@ -19,6 +19,8 @@ export const Create = () => {
     description: ''
   })
 
+  const [array, setArray] = useState<any | null>(null)
+  
   const [error, setError] = useState<ErrorForm>({
     title:'',
     description:'',
@@ -38,6 +40,7 @@ export const Create = () => {
       }
     })
   }
+  console.log(array)
 
   function onSubmit(e:React.FormEvent<HTMLFormElement>){
     e.preventDefault()
@@ -55,14 +58,20 @@ export const Create = () => {
       }
 
       const newSubjectString = JSON.stringify(newSubject)
+   
+       const oldStorage = localStorage.getItem('forum/threads')
+        let allThreads = []
 
-      // GET all threads 
+        if(oldStorage !==  null){
+         allThreads = JSON.parse(oldStorage)
+        }
 
-      //save all threads under one key
+        allThreads.push(newSubject)
 
-      localStorage.setItem("forum/threads", JSON.stringify([newSubject]))
+  
+         localStorage.setItem("forum/threads", JSON.stringify(allThreads))
       
-      router.push('/')
+        router.push('/')
     } catch (error) {
       
     }

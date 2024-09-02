@@ -37,7 +37,7 @@ const LandingPage: React.FC = () => {
             {threads.map((thread, index) => (
               <div onClick={() => handleNavigation(thread.id)} className='threadbox' key={`${thread.id}-${index}`}>
                 <h2>{thread.title}</h2>
-                <div className='thread-text'>
+                <div className='thread-text-home'>
                   <p className="ellipsis">{thread.description}</p>
                 </div>
                 <ul className='CreationDate'>
