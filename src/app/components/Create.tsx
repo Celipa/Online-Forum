@@ -11,7 +11,6 @@ import {
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
-import { Thread, ThreadCategory, SubmitForm, ErrorForm } from '@/types/post'
 import { validate } from './validate'
 
 export const Create = () => {
@@ -52,7 +51,7 @@ export const Create = () => {
           category:selection as ThreadCategory,
           title:form.title,
           description: form.description,
-          creationDate:new Date(new Date().toISOString()),
+          creationDate:new Date,
       }
 
       const newSubjectString = JSON.stringify(newSubject)
@@ -69,30 +68,41 @@ export const Create = () => {
 
   return (
     <div>
-      <form onSubmit={onSubmit} className='w-[300px] bg-slate-300 m-auto mt-10 p-10 rounded-xl'>
-        <div className='my-5'>
-          <label className='text-lg' htmlFor="">Title</label>
-          <Input value={form.title} name='title' placeholder='Title' onChange={onChangeHandler} />
-        </div>
-        <label className='text-lg'>Thread/QNA</label>
-        <Select onValueChange={e => setSelection(e)}>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="select" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="THREAD">THREAD</SelectItem>
-            <SelectItem value="QNA">QNA</SelectItem>
-          </SelectContent>
-        </Select>
-        <div className='my-5'>
-          <label className='text-lg'>Description</label>
-          <Textarea value={form.description} name='description' onChange={onChangeHandler} className='resize-none' />
-        </div>
-        <Button className='container'>Submit</Button>
-          {error.title && <p className='text-red-700 my-2'>{error.title}</p>}
-        {error.selection && <p className='text-red-700 my-2'>{error.selection}</p>}
-          {error.description && <p className='text-red-700'>{error.description}</p>}
-      </form>
-    </div>
+    <form onSubmit={onSubmit} className='form-container'>
+      <div className='my-5'>
+        <label className='form-label' htmlFor="">Title</label>
+        <input
+          value={form.title}
+          name='title'
+          placeholder='Title'
+          onChange={onChangeHandler}
+          className='form-input'
+        />
+      </div>
+  
+      <label className='form-label'>Thread/QNA</label>
+      <select onChange={e => setSelection(e.target.value)} className='form-select'>
+        <option value="" disabled selected>select</option>
+        <option value="THREAD">THREAD</option>
+        <option value="QNA">QNA</option>
+      </select>
+  
+      <div className='my-5'>
+        <label className='form-label'>Description</label>
+        <textarea
+          value={form.description}
+          name='description'
+          onChange={onChangeHandler}
+          className='form-textarea'
+        />
+      </div>
+  
+      <button type='submit' className='form-button'>Submit</button>
+  
+      {error.title && <p className='error-message'>{error.title}</p>}
+      {error.selection && <p className='error-message'>{error.selection}</p>}
+      {error.description && <p className='error-message'>{error.description}</p>}
+    </form>
+  </div>
   )
 }
