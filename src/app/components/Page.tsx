@@ -16,7 +16,11 @@ const LandingPage: React.FC = () => {
   useEffect(() => {
     function getData() {
       const keys = Object.keys(localStorage);
-      const threads = JSON.parse(localStorage.getItem("forum/threads")|| "[]" ) 
+      let threads = JSON.parse(localStorage.getItem("forum/threads")|| "[]" ) || []
+      if(!Array.isArray(threads)){
+        threads = []
+      }
+      console.log("getting threads", threads) 
       setThreads(threads);
       console.log(threads);
     }
