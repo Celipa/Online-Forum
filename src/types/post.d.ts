@@ -24,7 +24,7 @@ type ThreadComment = {
 	id: User;
 	thread: Thread;
 	content: string;
-	creator: User
+	creator?: User
 }
 
 type SubmitForm = {

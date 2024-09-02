@@ -56,7 +56,11 @@ export const Create = () => {
 
       const newSubjectString = JSON.stringify(newSubject)
 
-      localStorage.setItem(newSubject.id,newSubjectString)
+      // GET all threads 
+
+      //save all threads under one key
+
+      localStorage.setItem("forum/threads", JSON.stringify([newSubject]))
       
       router.push('/')
     } catch (error) {
