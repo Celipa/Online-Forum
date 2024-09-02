@@ -19,8 +19,6 @@ export const Create = () => {
     description: ''
   })
 
-  const [array, setArray] = useState<any | null>(null)
-  
   const [error, setError] = useState<ErrorForm>({
     title:'',
     description:'',
@@ -40,7 +38,6 @@ export const Create = () => {
       }
     })
   }
-  console.log(array)
 
   function onSubmit(e:React.FormEvent<HTMLFormElement>){
     e.preventDefault()
@@ -57,8 +54,6 @@ export const Create = () => {
           creationDate:new Date,
       }
 
-      const newSubjectString = JSON.stringify(newSubject)
-   
        const oldStorage = localStorage.getItem('forum/threads')
         let allThreads = []
 
