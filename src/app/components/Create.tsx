@@ -12,6 +12,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 import { Thread, ThreadCategory, SubmitForm, ErrorForm } from '@/types/post'
+
 import { validate } from './validate'
 
 export const Create = () => {
