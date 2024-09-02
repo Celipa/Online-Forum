@@ -12,6 +12,7 @@ export interface Thread {
 	description: string;
 	creationDate: Date;
 	creator?: User;
+	comments?: ThreadComment[];
 }
 
 export type QNAThread =  Thread & { //Type extension
@@ -24,7 +25,7 @@ export type ThreadComment = {
 	id?: User;
 	thread: Thread;
 	content: string;
-	creator?: User
+	creator: "GUEST";
 }
 
 export type SubmitForm = {
