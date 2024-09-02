@@ -29,9 +29,10 @@ const LandingPage: React.FC = () => {
 
   return (
     <div>
-      <h1>Threads</h1>
       <div className='thread-home'>
+      <h1 className='Thread-Header-Title'>Threads</h1>
         <div className='thread-container-home'>
+        <button className='Create-Thread-Btn' onClick={() => router.push('/create')}>Create Thread</button>
           <div className="thread-container-top-home">
             {threads.map((thread, index) => (
               <div onClick={() => handleNavigation(thread.id)} className='threadbox' key={`${thread.id}-${index}`}>

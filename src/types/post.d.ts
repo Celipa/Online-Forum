@@ -12,6 +12,7 @@ interface Thread {
 	description: string;
 	creationDate: Date;
 	creator?: User;
+	comments?: ThreadComment[];
 }
 
 type QNAThread =  Thread & { //Type extension
@@ -24,7 +25,7 @@ type ThreadComment = {
 	id: User;
 	thread: Thread;
 	content: string;
-	creator?: User
+	creator: "GUEST";
 }
 
 type SubmitForm = {
