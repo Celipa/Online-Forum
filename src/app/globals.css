@@ -221,6 +221,8 @@ body {
   margin-top: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.6);
   padding: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .threadbox:hover {
@@ -247,12 +249,16 @@ body {
 
 }
 .ellipsis {
-  
   width: 100%;
-  padding-right: 3rem;
+  text-align: center;
+  padding: 1rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.thread-text-home{
+  width: 90%;
+  align-self: center;
 }
 .Thread-Header-Title{
   display: flex;
