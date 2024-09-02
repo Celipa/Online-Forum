@@ -65,7 +65,8 @@ body {
 
 .d-thread {
   background-color: rgb(81, 81, 131);
-  height: 100%;
+  min-height: 100vh;
+  max-height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -193,6 +194,11 @@ body {
 }
 .comment-text {
   font-size: 0.9rem;
+}
+#commentLabel {
+  margin: .2rem;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 /* ------------------------Styling for Thread List---------------------------- */
