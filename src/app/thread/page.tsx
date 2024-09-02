@@ -21,7 +21,7 @@ function Thread() {
     })
 
     useEffect(() => {
-        const key = "fa21ea81-cbbf-467b-a55d-81d9754883f3"
+        const key = "2df6d47d-ca0c-4772-93c7-97a5f9e63a26"
         const localData = localStorage.getItem(key)
         const parsedData = localData ? JSON.parse(localData) : null
 
