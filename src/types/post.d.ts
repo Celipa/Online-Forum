@@ -21,10 +21,10 @@ export type QNAThread =  Thread & { //Type extension
 }
 
 export type ThreadComment = {
-	id: User;
+	id?: User;
 	thread: Thread;
 	content: string;
-	creator: User
+	creator?: User
 }
 
 export type SubmitForm = {

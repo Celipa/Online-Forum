@@ -12,6 +12,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 import { Thread, ThreadCategory, SubmitForm, ErrorForm } from '@/types/post'
+
 import { validate } from './validate'
 
 export const Create = () => {
@@ -57,7 +58,11 @@ export const Create = () => {
 
       const newSubjectString = JSON.stringify(newSubject)
 
-      localStorage.setItem(newSubject.id,newSubjectString)
+      // GET all threads 
+
+      //save all threads under one key
+
+      localStorage.setItem("forum/threads", JSON.stringify([newSubject]))
       
       router.push('/')
     } catch (error) {
