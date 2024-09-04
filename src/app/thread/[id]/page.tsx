@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 type Comment = {
     content: string;
-    creator: "GUEST";
+    creator: "GUEST"; //ändra till string
 }
 
 type Data = {
@@ -13,7 +13,7 @@ type Data = {
     title: string;
     description: string;
     creationDate: string;
-    comments: Comment[];
+    comments: Comment[]; //lägg in user någonstans här
   };
 
 function Thread() {
@@ -23,7 +23,7 @@ function Thread() {
       title: "",
       description: "",
       creationDate: "",
-      comments: [],
+      comments: [], //här med
     });
   
     const [threadId, setThreadId] = useState<string>("");
@@ -72,7 +72,7 @@ function Thread() {
   
       const updatedComments: Comment[] = [
         ...data.comments,
-        { content: newComment, creator: "GUEST" },
+        { content: newComment, creator: "GUEST" }, //ändra GUEST
       ];
   
       const updatedData = {
@@ -96,7 +96,7 @@ function Thread() {
             console.error("Thread not found during update.");
           }
         } catch (error) {
-          console.error("Failed to update data in localStorage", error);
+          console.error("Failed to update data in localStorage", error); //ändra error meddelande från console.log om ni vill
         }
       }
   
@@ -104,9 +104,8 @@ function Thread() {
       setNewComment("");
     };
   
-
-  return (
-    <div className='d-thread'>
+  return (                                          //Kolla över och lägg in ytterligare information så som creator
+    <div className='d-thread'>                      
         <div className="d-thread-container">
             <div className="d-thread-container-top">
               <div className="d-thread-container-top-width">
