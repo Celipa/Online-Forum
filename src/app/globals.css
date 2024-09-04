@@ -271,6 +271,7 @@ body {
   margin-bottom: -1rem;
   font-weight: bold;
   justify-content: center;
+  color: white;
 }
 .Create-Thread-Btn{
   display: flex;
