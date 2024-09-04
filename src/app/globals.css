@@ -307,9 +307,11 @@ body {
 /*------------------------Styling for Create----------------------------*/
 /* Container */
 .form-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   width: 300px;
-  background-color: #cbd5e1; /* slate-300 */
-  margin: 2.5rem auto;
+  background-color: rgb(199, 199, 199);
   padding: 2.5rem;
   border-radius: 0.75rem; /* rounded-xl */
 }
@@ -361,4 +363,13 @@ body {
   color: #b91c1c; /* red-700 */
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.c-thread-create {
+  min-height: 100vh;
+  max-height: 100%;
+  background-color: rgb(54, 56, 92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

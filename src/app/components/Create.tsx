@@ -19,7 +19,7 @@ export const Create = () => {
     description: ''
   })
 
-  const [array, setArray] = useState<any | null>(null)
+ 
   
   const [error, setError] = useState<ErrorForm>({
     title:'',
@@ -40,7 +40,6 @@ export const Create = () => {
       }
     })
   }
-  console.log(array)
 
   function onSubmit(e:React.FormEvent<HTMLFormElement>){
     e.preventDefault()
@@ -80,7 +79,7 @@ export const Create = () => {
   }
 
   return (
-    <div>
+    <div className='c-thread-create'>
     <form onSubmit={onSubmit} className='form-container'>
       <div className='my-5'>
         <label className='form-label' htmlFor="">Title</label>
