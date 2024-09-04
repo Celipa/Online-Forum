@@ -11,7 +11,7 @@ interface Thread {
 	title: string;
 	description: string;
 	creationDate: Date;
-	creator?: User;
+	creator?: User; //ändra från optional
 	comments?: ThreadComment[];
 }
 
@@ -22,10 +22,10 @@ type QNAThread =  Thread & { //Type extension
 }
 
 type ThreadComment = {
-	id: User;
+	id: User; //kan skapa buggar
 	thread: Thread;
 	content: string;
-	creator: "GUEST";
+	creator: "GUEST"; //ändra
 }
 
 type SubmitForm = {
